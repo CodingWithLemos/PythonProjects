@@ -1,4 +1,6 @@
 #idea folder
 **/.idea/
+#cache
+__pycache__
  
  
