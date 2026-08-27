@@ -102,8 +102,8 @@ def main(conversion):
         return year
 
     def secondToNanosecond(t):
-            nsec = t * 1E9
-            return nsec
+        nsec = t * 1E9
+        return nsec
         
     def secondToMillisecond(t):
         msec = t * 1000
