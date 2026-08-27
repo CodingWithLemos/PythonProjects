@@ -174,6 +174,135 @@ def main(conversion):
         return year
 
     # matching each function to conversion types input by user
+    match conversion:
+        case "year > nanosecond":
+            print(f'Time in nanoseconds: {yearToNanosecond(t):.2f}')
+
+        case "year > millisecond":
+            print(f'Time in milliseconds: {yearToMillisecond(t):.2f}')
+
+        case "year > second":
+            print(f'Time in seconds: {yearToSecond(t):.2f}')
+
+        case "year > minute":
+            print(f'Time in minutes: {yearToMinute(t):.2f}')
+
+        case "year > hour":
+            print(f'Time in hours: {yearToHour(t):.2f}')
+
+        case "year > day":
+            print(f'Time in days: {yearToDay(t):.2f}')
+
+        case "day > nanosecond":
+            print(f'Time in nanoseconds: {dayToNanosecond(t):.2f}')
+
+        case "day > millisecond":
+            print(f'Time in milliseconds: {dayToMillisecond(t):.2f}')
+
+        case "day > second":
+            print(f'Time in seconds: {dayToSecond(t):.2f}')
+
+        case "day > minute":
+            print(f'Time in minutes: {dayToMinute(t):.2f}')
+
+        case "day > hour":
+            print(f'Time in hours: {dayToHour(t):.2f}')
+
+        case "day > year":
+            print(f'Time in years: {dayToYear(t):.2f}')
+
+        case "hour > nanosecond":
+            print(f'Time in nanoseconds: {hourToNanosecond(t):.2f}')
+
+        case "hour > millisecond":
+            print(f'Time in milliseconds: {hourToMillisecond(t):.2f}') 
+
+        case "hour > second":
+            print(f'Time in seconds: {hourToSecond(t):.2f}')
+
+        case "hour > minute":
+            print(f'Time in minutes: {hourToMinute(t):.2f}')   
+
+        case "hour > day":
+            print(f'Time in days: {hourToDay(t):.2f}')
+
+        case "hour > year":
+            print(f'Time in years: {hourToYear(t):.2f}')
+
+        case "minute > nanosecond":
+            print(f'Time in nanoseconds: {minuteToNanosecond(t):.2f}')
+
+        case "minute > millisecond":
+            print(f'Time in milliseconds: {minuteToMillisecond(t):.2f}')
+
+        case "minute > second":
+            print(f'Time in seconds: {minuteToSecond(t):.2f}')
+
+        case "minute > hour":
+            print(f'Time in hours: {minuteToHour(t):.2f}')
+
+        case "minute > day":
+            print(f'Time in days: {minuteToDay(t):.2f}')
+
+        case "minute > year":
+            print(f'Time in years: {minuteToYear(t):.2f}')
+
+        case "second > nanosecond":
+            print(f'Time in nanoseconds: {secondToNanosecond(t):.2f}')
+
+        case "second > millisecond":
+            print(f'Time in milliseconds: {secondToMillisecond(t):.2f}')
+
+        case "second > minute":
+            print(f'Time in minutes: {secondToMinute(t):.2f}')
+
+        case "second > hour":
+            print(f'Time in hours: {secondToHour(t):.2f}')
+
+        case "second > day":
+            print(f'Time in days: {secondToDay(t):.2f}')
+
+        case "second > year":
+            print(f'Time in years: {secondToYear(t):.2f}')
+
+        case "millisecond > nanosecond":
+            print(f'Time in nanoseconds: {millisecondToNanosecond(t):.2f}')
+
+        case "millisecond > second":
+            print(f'Time in seconds: {millisecondToSecond(t):.2f}')
+
+        case "millisecond > minute":
+            print(f'Time in minutes: {millisecondToMinute(t):.2f}')
+
+        case "millisecond > hour":
+            print(f'Time in hours: {millisecondToHour(t):.2f}')
+
+        case "millisecond > day":
+            print(f'Time in days: {millisecondToDay(t):.2f}')
+
+        case "millisecond > year":
+            print(f'Time in years: {millisecondToYear(t):.2f}')
+
+        case "nanosecond > millisecond":
+            print(f'Time in milliseconds: {nanosecondToMillisecond(t):.2f}')
+
+        case "nanosecond > second":
+            print(f'Time in seconds: {nanosecondToSecond(t):.2f}')
+
+        case "nanosecond > minute":
+            print(f'Time in minutes: {nanosecondToMinute(t):.2f}')
+
+        case "nanosecond > hour":
+            print(f'Time in hours: {nanosecondToHour(t):.2f}')
+
+        case "nanosecond > day":
+            print(f'Time in days: {nanosecondToDay(t):.2f}')
+
+        case "nanosecond > year":
+            print(f'Time in years: {nanosecondToYear(t):.2f}')
+            
+        case _:
+            print("Invalid conversion!")    
 
 if __name__ == "__main__":
     import sys
