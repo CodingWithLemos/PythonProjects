@@ -177,6 +177,6 @@ def main(conversion):
 
 if __name__ == "__main__":
     import sys
-    T = int(sys.argv[1])
+    t = float(sys.argv[1])
     conversion = sys.argv[2]
     main(conversion)
