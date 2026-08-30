@@ -1,4 +1,4 @@
-# Length Module with Various Unit Conversions
+# Distance Module with Various Unit Conversions
 
 # Main module
 def main(conversion):
@@ -31,22 +31,22 @@ def main(conversion):
 # matching each function to conversion types input by user
     match conversion:
         case "km > mi":
-            print(f"Length in miles: {kilometers_to_miles(d):.2f}")
+            print(f"Distance in miles: {kilometers_to_miles(d):.2f}")
 
         case "km > nm":
-            print(f"Length in nautical miles: {kilometers_to_nautical_miles(d):.2f}")
+            print(f"Distance in nautical miles: {kilometers_to_nautical_miles(d):.2f}")
 
         case "mi > km":
-            print(f"Length in kilometers: {miles_to_kilometers(d):.2f}")
+            print(f"Distance in kilometers: {miles_to_kilometers(d):.2f}")
 
         case "mi > nm":
-            print(f"Length in nautical miles: {miles_to_nautical_miles(d):.2f}")
+            print(f"Distance in nautical miles: {miles_to_nautical_miles(d):.2f}")
 
         case "nm > km":
-            print(f"Length in kilometers: {nautical_miles_to_kilometers(d):.2f}")
+            print(f"Distance in kilometers: {nautical_miles_to_kilometers(d):.2f}")
 
         case "nm > mi":
-            print(f"Length in miles: {nautical_miles_to_miles(d):.2f}")
+            print(f"Distance in miles: {nautical_miles_to_miles(d):.2f}")
 
         case _:
             print("Invalid conversion!")
