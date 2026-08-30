@@ -28,4 +28,33 @@ def main(conversion):
         lbs = m / 16
         return lbs
 
-    
+# matching each function to conversion types input by user
+    match conversion:
+        case "kg > lbs":
+            print(f"Mass in Pounds: {kg_to_pounds(m):.2f}")
+
+        case "lbs > kg":
+            print(f"Mass in Kilograms: {pounds_to_kg(m):.2f}")
+
+        case "kg > oz":
+            print(f"Mass in Ounces: {kg_to_ounces(m):.2f}")
+
+        case "oz > kg":
+            print(f"Mass in Kilograms: {ounces_to_kg(m):.2f}")
+
+        case "lbs > oz":
+            print(f"Mass in Ounces: {pounds_to_ounces(m):.2f}")
+
+        case "oz > lbs":
+            print(f"Mass in Pounds: {ounces_to_pounds(m):.2f}")
+
+        case _:
+            print("Invalid conversion!")
+
+
+if __name__ == "__main__":
+    import sys
+    m = float(sys.argv[1])
+    conversion = sys.argv[2]
+    main(conversion)
+
