@@ -1,55 +1,47 @@
 # Fuel Economy Module with Various Unit Conversions
 
-# Main module
+# function definition
+def fuelConverter(
+        amt,
+        input_unit,
+        output_unit):
+    
+    """ prompt user to input fuel economy and conversion type, 
+    then convert fuel economy to desired unit """
 
-def main(conversion):
-    # function body
-    def liters_per_100km_to_miles_per_gallon(f):
-        mpg = 235.215 / f
-        return mpg
+    match input_unit, output_unit:
+        case 'liters per 100km', 'miles per gallon':
+            result = 235.215 / amt
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def miles_per_gallon_to_liters_per_100km(f):
-        l_per_100km = 235.215 / f
-        return l_per_100km
+        case 'miles per gallon', 'liters per 100km':
+            result = 235.215 / amt
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def kilometers_per_liter_to_miles_per_gallon(f):
-        mpg = f * 2.35215
-        return mpg
+        case 'liters per 100km', 'kilometers per liter':
+            result = 100 / amt
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def miles_per_gallon_to_kilometers_per_liter(f):
-        km_per_liter = f / 2.35215
-        return km_per_liter
+        case 'kilometers per liter', 'liters per 100km':
+            result = 100 / amt
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def liters_per_100km_to_kilometers_per_liter(f):
-        km_per_liter = 100 / f
-        return km_per_liter
+        case 'miles per gallon', 'kilometers per liter':
+            result = amt / 2.35215
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def kilometers_per_liter_to_liters_per_100km(f):
-        l_per_100km = 100 / f
-        return l_per_100km
+        case 'kilometers per liter', 'miles per gallon':
+            result = amt * 2.35215
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
+        
+        case _:
+            print('Invalid conversion!')
 
-# matching each function to conversion types input by user
-    match conversion:
-        case "L100km > mpg":
-            print(f"Fuel Economy in miles per gallon: {liters_per_100km_to_miles_per_gallon(f):.2f}")
-
-        case "mpg > L100km":
-            print(f"Fuel Economy in liters per 100 kilometers: {miles_per_gallon_to_liters_per_100km(f):.2f}")
-
-        case "kmL > mpg":
-            print(f"Fuel Economy in miles per gallon: {kilometers_per_liter_to_miles_per_gallon(f):.2f}")
-
-        case "mpg > kmL":
-            print(f"Fuel Economy in kilometers per liter: {miles_per_gallon_to_kilometers_per_liter(f):.2f}")
-
-        case "L100km > kmL":
-            print(f"Fuel Economy in kilometers per liter: {liters_per_100km_to_kilometers_per_liter(f):.2f}")
-
-        case "kmL > L100km":
-            print(f"Fuel Economy in liters per 100 kilometers: {kilometers_per_liter_to_liters_per_100km(f):.2f}")
-
+# main module
 if __name__ == "__main__":
     import sys
-    f = float(sys.argv[1])
-    conversion = sys.argv[2]
-    main(conversion)
+    amt = float(sys.argv[1])
+    input_unit = sys.argv[2]
+    output_unit = sys.argv[3]
+
+    fuelConverter(amt, input_unit, output_unit)

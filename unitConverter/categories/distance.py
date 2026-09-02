@@ -1,59 +1,47 @@
 # Distance Module with Various Unit Conversions
 
-# Main module
-def main(conversion):
-    # function body
-    def kilometers_to_miles(d):
-        miles = d / 1.60934
-        return miles
-
-    def kilometers_to_nautical_miles(d):
-        nautical_miles = d / 1.852
-        return nautical_miles
-
-    def miles_to_kilometers(d):
-        kilometers = d * 1.60934
-        return kilometers
-
-    def miles_to_nautical_miles(d):
-        nautical_miles = d / 1.15078
-        return nautical_miles
-
-    def nautical_miles_to_kilometers(d):
-        kilometers = d * 1.852
-        return kilometers
-
-    def nautical_miles_to_miles(d):
-        miles = d * 1.15078
-        return miles
-
+# function definition
+def distanceConverter(
+        amt,
+        input_unit,
+        output_unit):
     
-# matching each function to conversion types input by user
-    match conversion:
-        case "km > mi":
-            print(f"Distance in miles: {kilometers_to_miles(d):.2f}")
+    """ prompt user to input distance and conversion type, 
+    then convert distance to desired unit """
 
-        case "km > nm":
-            print(f"Distance in nautical miles: {kilometers_to_nautical_miles(d):.2f}")
+    match input_unit, output_unit:
+        case 'kilometers', 'miles':
+            result = amt / 1.60934
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case "mi > km":
-            print(f"Distance in kilometers: {miles_to_kilometers(d):.2f}")
+        case 'miles', 'kilometers':
+            result = amt * 1.60934
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case "mi > nm":
-            print(f"Distance in nautical miles: {miles_to_nautical_miles(d):.2f}")
+        case 'kilometers', 'nautical miles':
+            result = amt + 273.15
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case "nm > km":
-            print(f"Distance in kilometers: {nautical_miles_to_kilometers(d):.2f}")
+        case 'nautical miles', 'kilometers':
+            result = amt * 1.852
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case "nm > mi":
-            print(f"Distance in miles: {nautical_miles_to_miles(d):.2f}")
+        case 'miles', 'nautical miles':
+            result = (amt - 32) / 1.8 + 273.15
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
+        case 'nautical miles', 'miles':
+            result = (amt - 273.15) * 1.8 + 32
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
+        
         case _:
-            print("Invalid conversion!")
+            print('Invalid conversion!')
 
-    
+# main module
 if __name__ == "__main__":
     import sys
-    d = float(sys.argv[1])
-    conversion = sys.argv[2]
-    main(conversion)
+    amt = float(sys.argv[1])
+    input_unit = sys.argv[2]
+    output_unit = sys.argv[3]
+
+    distanceConverter(amt, input_unit, output_unit)

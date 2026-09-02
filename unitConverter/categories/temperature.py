@@ -1,51 +1,47 @@
 # Temperature Module with Various Unit Conversions
 
-# main module
-def main(conversion):
-    #  function body
-    def celsiusToFahrenheit(T):
-        fahrenheit = 1.8*T+32
-        return fahrenheit
+# function definition
+def temperatureConverter(
+        amt,
+        input_unit,
+        output_unit):
+    
+    """ prompt user to input temperature and conversion type, 
+    then convert temperature to desired unit """
 
-    def celsiusToKelvin(T):
-        kelvin = T + 273.15
-        return kelvin
+    match input_unit, output_unit:
+        case 'celsius', 'fahrenheit':
+            result = 1.8 * amt + 32
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def fahrenheitToCelsius(T):
-        celsius = ( T - 32 ) / 1.8
-        return celsius
+        case 'fahrenheit', 'celsius':
+            result = (amt - 32) / 1.8
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def fahrenheitToKelvin(T):
-        kelvin = (T + 459.67) / 1.8
-        return kelvin
+        case 'celsius', 'kelvin':
+            result = amt + 273.15
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def kelvinToCelsius(T):
-        celsius = T - 273.15
-        return celsius
+        case 'kelvin', 'celsius':
+            result = amt - 273.15
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def kelvinToFahrenheit(T):
-        fahrenheit = (T * 1.8) - 459.67
-        return fahrenheit
+        case 'fahrenheit', 'kelvin':
+            result = (amt - 32) / 1.8 + 273.15
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    # matching each function to conversion types input by user
-    match conversion:
-        case 'celsius > fahrenheit':
-            print(f'Temperature in Fahrenheit: {celsiusToFahrenheit(T):.2f}')
-        case 'celsius > kelvin':
-            print(f'Temperature in Kelvin: {celsiusToKelvin(T):.2f}')
-        case 'fahrenheit > celsius':
-            print(f'Temperature in Celsius: {fahrenheitToCelsius(T):.2f}')
-        case 'fahrenheit > kelvin':
-            print(f'Temperature in Kelvin: {fahrenheitToKelvin(T):.2f}')
-        case 'kelvin > celsius':
-            print(f'Temperature in Celsius: {kelvinToCelsius(T):.2f}')
-        case 'kelvin > fahrenheit':
-            print(f'Temperature in Fahrenheit: {kelvinToFahrenheit(T):.2f}')
+        case 'kelvin', 'fahrenheit':
+            result = (amt - 273.15) * 1.8 + 32
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
+        
         case _:
             print('Invalid conversion!')
 
+# main module
 if __name__ == "__main__":
     import sys
-    T = int(sys.argv[1])
-    conversion = sys.argv[2]
-    main(conversion)
+    amt = float(sys.argv[1])
+    input_unit = sys.argv[2]
+    output_unit = sys.argv[3]
+
+    temperatureConverter(amt, input_unit, output_unit)

@@ -1,60 +1,48 @@
 # Mass Module with Various Unit Conversions
 
-# Main module
+# function definition
+def massConverter(
+        amt,
+        input_unit,
+        output_unit):
+    
+    """ prompt user to input mass and conversion type, 
+    then convert mass to desired unit """
 
-def main(conversion):
-    # function body
-    def kg_to_pounds(m):
-        lbs = m * 2.20462
-        return lbs
+    match input_unit, output_unit:
+        case 'kilograms', 'pounds':
+            result = amt * 2.20462
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def pounds_to_kg(m):
-        kg = m / 2.20462
-        return kg
+        case 'pounds', 'kilograms':
+            result = amt / 2.20462
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def kg_to_ounces(m):
-        oz = m * 35.274
-        return oz
+        case 'kilograms', 'ounces':
+            result = amt * 35.274
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def ounces_to_kg(m):
-        kg = m / 35.274
-        return kg
+        case 'ounces', 'kilograms':
+            result = amt / 35.274
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def pounds_to_ounces(m):
-        oz = m * 16
-        return oz
+        case 'pounds', 'ounces':
+            result = amt * 16
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-    def ounces_to_pounds(m):
-        lbs = m / 16
-        return lbs
-
-# matching each function to conversion types input by user
-    match conversion:
-        case "kg > lbs":
-            print(f"Mass in Pounds: {kg_to_pounds(m):.2f}")
-
-        case "lbs > kg":
-            print(f"Mass in Kilograms: {pounds_to_kg(m):.2f}")
-
-        case "kg > oz":
-            print(f"Mass in Ounces: {kg_to_ounces(m):.2f}")
-
-        case "oz > kg":
-            print(f"Mass in Kilograms: {ounces_to_kg(m):.2f}")
-
-        case "lbs > oz":
-            print(f"Mass in Ounces: {pounds_to_ounces(m):.2f}")
-
-        case "oz > lbs":
-            print(f"Mass in Pounds: {ounces_to_pounds(m):.2f}")
-
+        case 'ounces', 'pounds':
+            result = amt / 16
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
+        
         case _:
-            print("Invalid conversion!")
+            print('Invalid conversion!')
 
-
+# main module
 if __name__ == "__main__":
     import sys
-    m = float(sys.argv[1])
-    conversion = sys.argv[2]
-    main(conversion)
+    amt = float(sys.argv[1])
+    input_unit = sys.argv[2]
+    output_unit = sys.argv[3]
+
+    massConverter(amt, input_unit, output_unit)
 

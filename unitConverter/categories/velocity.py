@@ -1,58 +1,48 @@
 # Velocity Module with Various Unit Conversions
 
-# Main module
-
-def main(conversion):
-    # function body
-    def km_per_hour_to_mi_per_hour(v): 
-        mph = v / 1.60934
-        return mph
-
-    def km_per_hour_to_knots(v):
-        knots = v / 1.852
-        return knots
-
-    def mi_per_hour_to_km_per_hour(v):
-        kmh = v * 1.60934
-        return kmh
+# function definition
+def velocityConverter(
+        amt,
+        input_unit,
+        output_unit):
     
-    def mi_per_hour_to_knots(v):
-        knots = v / 1.15078
-        return knots
-    
-    def knots_to_km_per_hour(v):
-        kmh = v * 1.852
-        return kmh
-    
-    def knots_to_mi_per_hour(v):
-        mph = v * 1.15078
-        return mph
-    
-# matching each function to conversion types input by user
-    match conversion:
-        case 'kmh > mph':
-            print(f'Velocity in Miles per Hour: {km_per_hour_to_mi_per_hour(v):.2f}')
+    """ prompt user to input fuel economy and conversion type, 
+    then convert fuel economy to desired unit """
 
-        case 'kmh > kts':
-            print(f'Velocity in Knots: {km_per_hour_to_knots(v):.2f}')
+    match input_unit, output_unit:
+        case 'kilometer per hour', 'miles per hour':
+            result = amt / 1.60934
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case 'mph > kmh':
-            print(f'Velocity in Kilometers per Hour: {mi_per_hour_to_km_per_hour(v):.2f}')
+        case 'miles per hour', 'kilometer per hour':
+            result = amt * 1.60934
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case 'mph > kts':
-            print(f'Velocity in Knots: {mi_per_hour_to_knots(v):.2f}')
+        case 'kilometer per hour', 'knots':
+            result = amt / 1.852
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case 'kts > kmh':
-            print(f'Velocity in Kilometers per Hour: {knots_to_km_per_hour(v):.2f}')
+        case 'knots', 'kilometer per hour':
+            result = amt * 1.852
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
-        case 'kts > mph':
-            print(f'Velocity in Miles per Hour: {knots_to_mi_per_hour(v):.2f}')
+        case 'miles per hour', 'knots':
+            result = amt / 1.15078
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
 
+        case 'knots', 'miles per hour':
+            result = amt * 1.15078
+            print(f'{amt:.2f} {input_unit} is equal to {result:.2f} {output_unit}.')
+        
         case _:
             print('Invalid conversion!')
 
+
+# main module
 if __name__ == "__main__":
     import sys
-    v = float(sys.argv[1])
-    conversion = sys.argv[2]
-    main(conversion)
+    amt = float(sys.argv[1])
+    input_unit = sys.argv[2]
+    output_unit = sys.argv[3]
+
+    velocityConverter(amt, input_unit, output_unit)
