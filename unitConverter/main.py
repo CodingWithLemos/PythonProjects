@@ -3,13 +3,13 @@
 # Imports Section
 import sys
 
-from categories.distance import distanceConverter
-from categories.fuelecon import fuelConverter
-from categories.mass import massConverter
-from categories.pressure import pressureConverter
-from categories.temperature import temperatureConverter
-from categories.time import timeConverter
-from categories.velocity import velocityConverter
+from unitConverter.categories.distance import distanceConverter
+from unitConverter.categories.fuelecon import fuelConverter
+from unitConverter.categories.mass import massConverter
+from unitConverter.categories.pressure import pressureConverter
+from unitConverter.categories.temperature import temperatureConverter
+from unitConverter.categories.time import timeConverter
+from unitConverter.categories.velocity import velocityConverter
 
 def main():
     # Function Definition Section
