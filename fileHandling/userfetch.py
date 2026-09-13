@@ -5,12 +5,14 @@ from jsonFiles import *
 # invoking json filepath
 fpath = "D:\\repos\\PythonProjects\\fileHandling\\jsonFiles\\users.json"
 
-# use json dumps to print json contents
+# parse the file once into a dict
 with open(fpath, encoding='UTF-8') as file:
-    def fetchUserData():
-        data = file.read()
-        print(json.dumps(data))
+    data = json.load(file)
 
-    fetchUserData()
+def fetchCityNames():
+    # returns all cities
+    for user in data["utilizadores"]:
+        print(json.dumps(user["cidade"],
+                        indent=2, ensure_ascii=False))
 
-file.close()
+fetchCityNames()
