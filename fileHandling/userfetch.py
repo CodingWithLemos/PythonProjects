@@ -15,4 +15,19 @@ def fetchCityNames():
         print(json.dumps(user["cidade"],
                         indent=2, ensure_ascii=False))
 
+def fetchActiveUsers():
+    # returns all active users
+    for user in data["utilizadores"]:
+        if user["ativo"] == True:
+            print(json.dumps(user["nome"],
+                            indent=2, ensure_ascii=False))
+
+def fetchUserProfRoles():
+    # returns all users' professional roles
+    for user in data["utilizadores"]:
+        print(json.dumps(user["cargo"],
+                         indent=2, ensure_ascii=False))
+
 fetchCityNames()
+fetchActiveUsers()
+fetchUserProfRoles()
