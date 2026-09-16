@@ -3,7 +3,7 @@ import json
 from jsonFiles import *
 
 # invoking json filepath
-fpath = "fileHandling\\jsonFiles\\users.json"
+fpath = ".\\jsonFiles\\users.json"
 
 # parse the file once into a dict
 with open(fpath, encoding='UTF-8') as file:
