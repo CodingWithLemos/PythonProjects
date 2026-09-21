@@ -1,0 +1,114 @@
+{
+  "utilizadores": [
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana.silva@mail.pt",
+      "idade": 19,
+      "cidade": "Coimbra",
+      "cargo": "Advogada",
+      "telefone": "+351 968033869",
+      "ativo": false,
+      "data_registo": "2022-03-27"
+    },
+    {
+      "id": 2,
+      "nome": "João Pereira",
+      "email": "joao.pereira@outlook.com",
+      "idade": 37,
+      "cidade": "Porto",
+      "cargo": "Médica",
+      "telefone": "+351 960810616",
+      "ativo": false,
+      "data_registo": "2020-12-08"
+    },
+    {
+      "id": 3,
+      "nome": "Maria Santos",
+      "email": "maria.santos@gmail.com",
+      "idade": 46,
+      "cidade": "Braga",
+      "cargo": "Enfermeiro",
+      "telefone": "+351 995261213",
+      "ativo": false,
+      "data_registo": "2020-06-25"
+    },
+    {
+      "id": 4,
+      "nome": "Pedro Costa",
+      "email": "pedro.costa@gmail.com",
+      "idade": 24,
+      "cidade": "Faro",
+      "cargo": "Engenheira",
+      "telefone": "+351 975710714",
+      "ativo": true,
+      "data_registo": "2024-04-24"
+    },
+    {
+      "id": 5,
+      "nome": "Sofia Ferreira",
+      "email": "sofia.ferreira@outlook.com",
+      "idade": 35,
+      "cidade": "Coimbra",
+      "cargo": "Contabilista",
+      "telefone": "+351 981013209",
+      "ativo": true,
+      "data_registo": "2023-02-11"
+    },
+    {
+      "id": 6,
+      "nome": "Miguel Oliveira",
+      "email": "miguel.oliveira@gmail.com",
+      "idade": 60,
+      "cidade": "Faro",
+      "cargo": "Engenheira",
+      "telefone": "+351 982327638",
+      "ativo": true,
+      "data_registo": "2021-11-22"
+    },
+    {
+      "id": 7,
+      "nome": "Carla Rodrigues",
+      "email": "carla.rodrigues@gmail.com",
+      "idade": 58,
+      "cidade": "Porto",
+      "cargo": "Enfermeiro",
+      "telefone": "+351 954964803",
+      "ativo": true,
+      "data_registo": "2020-08-28"
+    },
+    {
+      "id": 8,
+      "nome": "Bruno Martins",
+      "email": "bruno.martins@mail.pt",
+      "idade": 65,
+      "cidade": "Aveiro",
+      "cargo": "Advogada",
+      "telefone": "+351 998301117",
+      "ativo": false,
+      "data_registo": "2023-07-18"
+    },
+    {
+      "id": 9,
+      "nome": "Inês Sousa",
+      "email": "ines.sousa@empresa.pt",
+      "idade": 64,
+      "cidade": "Coimbra",
+      "cargo": "Médica",
+      "telefone": "+351 985444290",
+      "ativo": true,
+      "data_registo": "2021-12-22"
+    },
+    {
+      "id": 10,
+      "nome": "Rui Carvalho",
+      "email": "rui.carvalho@outlook.com",
+      "idade": 26,
+      "cidade": "Aveiro",
+      "cargo": "Enfermeiro",
+      "telefone": "+351 974357972",
+      "ativo": false,
+      "data_registo": "2020-10-08"
+    }
+  ]
+}
