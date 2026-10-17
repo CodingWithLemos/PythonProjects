@@ -8,6 +8,21 @@ class Person:
         self.email = email,
         self.phone = phone
 
+class Student(Person):
+    def __init__(self, name: str, gender: str, birth_year: int, 
+                 email: str, phone: int):
+        super().__init__(name, gender, birth_year, email, phone)
+
+class Study_area:
+    def __init__(self, id : str, name : str):
+        self.name = name
+        self.id = id
+
+class Major(Study_area):
+    def __init__(self, id : str, name : str):
+        super().__init__(id, name)
+        self.name = name
+
 class Car:
     def __init__(self, brand : str,
                  model : str,
