@@ -1,7 +1,10 @@
 # Introduction to Object-Oriented Programming in Python
 class Person:
-    def __init__(self, name : str, email : str, phone : int):
+    def __init__(self, name : str, gender : str, birth_year : int,
+    email : str, phone : int):
         self.name = name,
+        self.gender = gender,
+        self.birth_year = birth_year,
         self.email = email,
         self.phone = phone
 
@@ -22,15 +25,17 @@ class Car:
         self.status = status
 
 class Customer(Person): # Inherits from 'Person' parent class
-    def __init__(self, name: str, email: str, phone: int, driver_id : str,
+    def __init__(self, name: str, gender : str, birth_year : int, email: str, 
+                 phone: int, driver_id : str,
                  address : str):
-        super().__init__(name, email, phone)
+        super().__init__(name, gender, birth_year, email, phone)
         self.driver_id = driver_id
         self.address = address
 
 class Employee(Person): # Inherits from 'Person' parent class
-    def __init__(self, name : str, email : str, phone : int, employee_id : int):
-        super().__init__(name, email, phone)
+    def __init__(self, name : str, gender : str, birth_year : int, email : str, 
+                 phone : int, employee_id : int):
+        super().__init__(name, gender, birth_year, email, phone)
         self.employee_id = employee_id
 
 class Insurance:
