@@ -23,6 +23,13 @@ class Major(Study_area):
         super().__init__(id, name)
         self.name = name
 
+class Subject(Major):
+    def __init__(self, id: str, name: str, score : int):
+        super().__init__(id, name)
+        self.id = id
+        self.name = name
+        self.score = score
+
 class Car:
     def __init__(self, brand : str,
                  model : str,
