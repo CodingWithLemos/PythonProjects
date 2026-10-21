@@ -2,10 +2,10 @@
 class Person:
     def __init__(self, name : str, gender : str, birth_year : int,
     email : str, phone : int):
-        self.name = name,
-        self.gender = gender,
-        self.birth_year = birth_year,
-        self.email = email,
+        self.name = name
+        self.gender = gender
+        self.birth_year = birth_year
+        self.email = email
         self.phone = phone
 
 class Question: 
@@ -77,5 +77,5 @@ class Insurance:
     type = 'auto'
 
     def __init__(self, level : str, price : float):
-        self.level = level,
+        self.level = level
         self.price = price
