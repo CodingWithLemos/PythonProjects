@@ -8,6 +8,19 @@ class Person:
         self.email = email,
         self.phone = phone
 
+class Question: 
+    def __init__(self, question_instruction : str):
+        self.question_instruction = question_instruction
+
+    def get_question(self):
+        print(self.question_instruction)
+
+class Quiz:
+    def __init__(self):
+        self.q1 = Question('What is the meaning of Life?')
+        self.q2 = Question('What do you do if Life gives you lemons?')
+        self.q3 = Question('What is 2+2?')
+
 class Student(Person):
     def __init__(self, name: str, gender: str, birth_year: int, 
                  email: str, phone: int):
